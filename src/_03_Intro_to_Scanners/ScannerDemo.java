@@ -1,4 +1,4 @@
-package _03_Intro_to_Scanners;
+ package _03_Intro_to_Scanners;
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ public class ScannerDemo {
     public static void main(String[] args) {
         /*
          * 1. Create an object of the Scanner class.
-         * 
+   
          * Note: You will need to pass System.in to the constructor(no quotes).
          * 
          * You might notice this looks similar to System.out which you use for
@@ -25,7 +25,7 @@ public class ScannerDemo {
          * are running your program or the input/output stream you are using.
          */
 
-        
+        Scanner scanner= new Scanner(System.in);
         
         /*
          * 2. Use a syso to ask the user for their name and then use the Scanner

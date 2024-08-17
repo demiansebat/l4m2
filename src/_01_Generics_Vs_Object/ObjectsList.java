@@ -7,7 +7,7 @@ package _01_Generics_Vs_Object;
  * Double, etc)
  */
 public class ObjectsList {
-    private Object[] list;
+    private Object[] list; 
 
     public ObjectsList() {
         list = new Object[0];

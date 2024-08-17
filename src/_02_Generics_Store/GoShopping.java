@@ -11,18 +11,39 @@ public class GoShopping {
 	
 	public static void main(String[] args) {
 		// 2. Create a Cart object of type Candy
-		
+//		Cart <Candy> candy= new Cart();
+//		// 3. Create another Cart object of type Cereal
+//		Cart <Cereal> cereal= new Cart();
+//		// 4. Add a few items to EACH cart
+//		candy.add(new Candy());
+//		candy.add(new Candy());
+//		candy.add(new Candy());
+//		cereal.add(new Cereal());
+//		cereal.add(new Cereal());
+//		cereal.add(new Cereal());
+//		
+//		
+//		
+//		// 5. Call the showCart() method on EACH cart
+//		candy.showCart();
+//		cereal.showCart();
+		Cart <Clothing> clothing= new Cart();
 		// 3. Create another Cart object of type Cereal
-		
+		Cart <Toy> toy= new Cart();
 		// 4. Add a few items to EACH cart
-		
+		clothing.add(new Clothing());
+		clothing.add(new Clothing());
+		clothing.add(new Clothing());
+		toy.add(new Toy());
+		toy.add(new Toy());
+		toy.add(new Toy());
 		
 		
 		
 		// 5. Call the showCart() method on EACH cart
-		
-		
-		// 6. Run the code
+		clothing.showCart();
+		toy.showCart();
+			// 6. Run the code
 		
 		// 7. Comment out the code you have so far
 		
