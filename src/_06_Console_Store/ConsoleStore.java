@@ -1,5 +1,9 @@
 package _06_Console_Store;
 
+import java.util.Scanner;
+
+import _02_Generics_Store.*;
+
 public class ConsoleStore {
 
     /*
@@ -37,7 +41,26 @@ public class ConsoleStore {
      */
 
     public static void main(String[] args) {
+        Scanner scanner= new Scanner(System.in);
+        Cart cart= new Cart();
+while(true) {
 
+	System.out.println("1,Add || 2,Remove || 3,View || 4,Checkout");
+	int option= scanner.nextInt();
+	scanner.nextLine();
+	if(option==1) {
+		
+	}
+if(option==2) {
+		
+	}
+if(option==3) {
+	
+}
+if(option==4) {
+	
+}
+}
     }
 
 }
