@@ -1,5 +1,6 @@
 package _06_Console_Store;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import _02_Generics_Store.*;
@@ -43,24 +44,63 @@ public class ConsoleStore {
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 		Cart cart = new Cart();
+		ArrayList<String> view = new ArrayList<String>();
+		int stipend = 30;
+		int cartPrice=0;
+		int candyPrice=12;
+		int cerealPrice=10;
+		int clothingPrice=8;
+		int toyPrice=15;
 		do {
 
 			System.out.println("1,Add || 2,Remove || 3,View || 4,Checkout");
 			int option = scanner.nextInt();
 			scanner.nextLine();
 			if (option == 1) {
-System.out.println("1,Candy || 2,Cereal || 3,Clothing || 4,Toy");
-int added=scanner.nextInt();
-scanner.nextLine();
+				System.out.println("1,Candy || 2,Cereal || 3,Clothing || 4,Toy");
+				int added = scanner.nextInt();
+				scanner.nextLine();
+				if (added == 1) {
+					cartPrice += 12;
+				view.add("Candy");
+					
+				}
+				if (added == 2) {
+					cartPrice += 10;
+					view.add("Cereal");
+				}
+				if (added == 3) {
+					cartPrice += 8;
+					view.add("Clothing");
+				}
+				if (added == 4) {
+					cartPrice += 15;
+					view.add("Toy");
+				}
+
 			}
 			if (option == 2) {
 
 			}
 			if (option == 3) {
-//do this next
+System.out.println(view);
 			}
 			if (option == 4) {
-
+System.out.println("Reciept:");
+for (int i = 0; i < view.size(); i++) {
+	if(view.get(i).equals("Candy")) {
+	System.out.println(view.get(i) + " " +candyPrice);
+	}
+	if(view.get(i).equals("Cereal")) {
+		System.out.println(view.get(i) + " " +cerealPrice);
+		}
+	if(view.get(i).equals("Clothing")) {
+		System.out.println(view.get(i) + " " +clothingPrice);
+		}
+	if(view.get(i).equals("Toy")) {
+		System.out.println(view.get(i) + " " +toyPrice);
+		}
+}
 			}
 		} while (true);
 	}
