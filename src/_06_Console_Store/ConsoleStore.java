@@ -46,61 +46,86 @@ public class ConsoleStore {
 		Cart cart = new Cart();
 		ArrayList<String> view = new ArrayList<String>();
 		int stipend = 30;
-		int cartPrice=0;
-		int candyPrice=12;
-		int cerealPrice=10;
-		int clothingPrice=8;
-		int toyPrice=15;
+
+		int candyPrice = 12;
+		int cerealPrice = 10;
+		int clothingPrice = 8;
+		int toyPrice = 15;
+		int finalThing = 0;
 		do {
 
 			System.out.println("1,Add || 2,Remove || 3,View || 4,Checkout");
 			int option = scanner.nextInt();
 			scanner.nextLine();
+			if (option == 2) {
+				System.out.print("Which number item would you like to remove?");
+				int ind = scanner.nextInt();
+				scanner.nextLine();
+				if (view.get(ind - 1).equals("Candy")) {
+					finalThing -= candyPrice;
+				}
+				if (view.get(ind - 1).equals("Cereal")) {
+					finalThing -= cerealPrice;
+				}
+				if (view.get(ind - 1).equals("Clothing")) {
+					finalThing -= clothingPrice;
+				}
+				if (view.get(ind - 1).equals("Toy")) {
+					finalThing -= toyPrice;
+				}
+				view.remove(ind - 1);
+
+			}
 			if (option == 1) {
 				System.out.println("1,Candy || 2,Cereal || 3,Clothing || 4,Toy");
 				int added = scanner.nextInt();
 				scanner.nextLine();
 				if (added == 1) {
-					cartPrice += 12;
-				view.add("Candy");
-					
+					finalThing += 12;
+					view.add("Candy");
+
 				}
 				if (added == 2) {
-					cartPrice += 10;
+					finalThing += 10;
 					view.add("Cereal");
 				}
 				if (added == 3) {
-					cartPrice += 8;
+					finalThing += 8;
 					view.add("Clothing");
 				}
 				if (added == 4) {
-					cartPrice += 15;
+					finalThing += 15;
 					view.add("Toy");
 				}
 
 			}
-			if (option == 2) {
 
-			}
 			if (option == 3) {
-System.out.println(view);
+				System.out.println(view);
 			}
 			if (option == 4) {
-System.out.println("Reciept:");
-for (int i = 0; i < view.size(); i++) {
-	if(view.get(i).equals("Candy")) {
-	System.out.println(view.get(i) + " " +candyPrice);
-	}
-	if(view.get(i).equals("Cereal")) {
-		System.out.println(view.get(i) + " " +cerealPrice);
-		}
-	if(view.get(i).equals("Clothing")) {
-		System.out.println(view.get(i) + " " +clothingPrice);
-		}
-	if(view.get(i).equals("Toy")) {
-		System.out.println(view.get(i) + " " +toyPrice);
-		}
-}
+
+				if (finalThing <= stipend) {
+					System.out.println("Reciept:");
+					for (int i = 0; i < view.size(); i++) {
+						if (view.get(i).equals("Candy")) {
+							System.out.println(view.get(i) + " " + candyPrice);
+						}
+						if (view.get(i).equals("Cereal")) {
+							System.out.println(view.get(i) + " " + cerealPrice);
+						}
+						if (view.get(i).equals("Clothing")) {
+							System.out.println(view.get(i) + " " + clothingPrice);
+						}
+						if (view.get(i).equals("Toy")) {
+							System.out.println(view.get(i) + " " + toyPrice);
+						}
+					}
+					System.out.println("Total: " + finalThing);
+					stipend -= finalThing;
+				} else {
+					System.out.println("Not enough money in stipend, you should remove items");
+				}
 			}
 		} while (true);
 	}
